@@ -1,0 +1,6 @@
+
+* @RuntWith
+* @Parameters
+* public static Collection<Object[]> data() {...}
+Constructor with input / expected  -> fields
+Tests using fields
