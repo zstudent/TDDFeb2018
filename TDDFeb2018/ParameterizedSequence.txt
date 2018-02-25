@@ -1,6 +1,6 @@
 
 * @RuntWith
 * @Parameters
-* public static Collection<Object[]> data() {...}
+* public static Collection<Object[]> com.epam.tdd.data() {...}
 Constructor with input / expected  -> fields
 Tests using fields
