@@ -30,7 +30,7 @@ public class ArabicToRomanNumeralsConverterNegativeTests {
      *                                            1 to 3999 inclusive
      */
     @Test(expected = IllegalArgumentException.class)
-    public void isThrowsWhenInputValueViolatesLowerRangeBorder() {
+    public void isThrowsWhenInputValueViolatesLowerRangeBorder() throws IllegalArgumentException{
         numeralsConverter.convert("0");
     }
 
@@ -42,7 +42,7 @@ public class ArabicToRomanNumeralsConverterNegativeTests {
      *                                            1 to 3999 inclusive
      */
     @Test(expected = IllegalArgumentException.class)
-    public void isThrowsWhenInputValueViolatesUpperRangeBorder() {
+    public void isThrowsWhenInputValueViolatesUpperRangeBorder() throws IllegalArgumentException{
         numeralsConverter.convert("4000");
     }
 

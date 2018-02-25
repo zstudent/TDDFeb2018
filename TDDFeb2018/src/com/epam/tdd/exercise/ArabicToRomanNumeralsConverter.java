@@ -35,7 +35,7 @@ public class ArabicToRomanNumeralsConverter implements NumeralsConverter {
      *                                  belong to range from 1 to 3999 inclusive
      */
     @Override
-    public String convert(String toConvert) {
+    public String convert(String toConvert) throws IllegalArgumentException {
         int toConvertInteger = Integer.parseInt(toConvert);
         if (toConvertInteger < 1 || toConvertInteger > 3999) {
             throw new IllegalArgumentException(String.format("Permitted arabic number to convert " +

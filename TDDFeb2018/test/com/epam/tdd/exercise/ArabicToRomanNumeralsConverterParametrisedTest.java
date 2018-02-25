@@ -14,7 +14,7 @@ import java.util.Comparator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Class for testing ArabicToRomanNumeralsConverter by parametrized tests.
@@ -38,15 +38,17 @@ public class ArabicToRomanNumeralsConverterParametrisedTest {
      *
      * @throws ClassNotFoundException see {@link ClassNotFoundException#ClassNotFoundException()}
      * @throws IllegalAccessException see {@link IllegalAccessException#IllegalAccessException()}
+     * @throws InstantiationException see {@link InstantiationException#InstantiationException()}
      */
     @Before
-    public void setUp() throws Exception {
+    public void setUp() throws ClassNotFoundException, IllegalAccessException,
+            InstantiationException {
         numeralsConverter = (NumeralsConverter) Class.forName(this.getClass().getName().replace
                 ("ParametrisedTest", "")).newInstance();
     }
 
     @Parameterized.Parameters
-    public static Collection<String[]> setData() throws Exception {
+    public static Collection<String[]> setData() throws IOException {
         return Stream.of(Paths.get(ArabicToRomanNumeralsConverterParametrisedTest.class
                 .getResource("/com/epam/tdd/data/arabicVsRoman.txt").getPath().replaceFirst(
                         "^/(.:/)", "$1")))
@@ -70,7 +72,7 @@ public class ArabicToRomanNumeralsConverterParametrisedTest {
      *                                  1 to 3999 inclusive
      */
     @Test
-    public void isConvertingArabicToRomanFrom1Till3999() throws Exception {
+    public void isConvertingArabicToRomanFrom1Till3999() throws IllegalArgumentException {
         assertEquals(
                 String.format("Converter's error: expected=%s; actual=%s.", expected, toConvert),
                 expected,
